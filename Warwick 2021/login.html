@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- <link rel="stylesheet" href="login.css"> -->
 	<title>Login</title>
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
@@ -8,19 +9,17 @@
 
 <script src="login.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 </head>
 <body>
 	<h1>Login</h1>
+	<div id ="formContainer">
 	<div id="header"></div>
-<input type="Email" placeholder="Email" id="Email"/>
+<input type="email" placeholder="email" id="email"/>
 <input type="password" placeholder="password" id="password"/>
 
-<button onclick="signup()" id="signup">Sign Up</button>
-<button onclick="signin()" id="signin">Sign In</button>
-<button onclick="signout()" id="signout">Sign Out</button>
+<button onclick="signUp()" id="signUp">Sign Up</button>
+<button onclick="signIn()" id="signIn">Sign In</button>
+<button onclick="signOut()" id="signOut">Sign Out</button>
 
 
 </body>
