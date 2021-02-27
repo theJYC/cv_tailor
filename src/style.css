@@ -1,0 +1,486 @@
+:root {
+    --font-size: 10px;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    font-family: Arial;
+    font-weight: bold;
+    color: #575555;
+    display: block;
+    margin: 0;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+header {
+    font-size: 3.25rem;
+    /*color: #AF5E59;*/
+    font-weight: normal;
+    padding-bottom: 5px;
+    margin: 0px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+.newProfile {
+    background-color: #d3d6e3;
+    border: 2.75px solid #4f4f4f;
+    border-radius: 0.75rem;
+    width: 155px;
+    height: 50px;
+    font-weight: bold;
+    color: #575555;
+    font-size: 22px;
+}
+
+.addContact:hover {
+    background-color: #caccd9;
+}
+
+.addContact:active {
+    background-color: #bbbdc9;
+}
+
+/*signature snippet*/
+
+#sourcecode {
+    font-family: Arial;
+    font-size: 18.5px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    font-weight: bold;
+    color: #4f4f4f;
+}
+
+p {
+    margin-block-start: 0em;
+}
+
+.sourcetext {
+    text-decoration: none;
+}
+
+#demo {
+    color: #c26965;
+    border-bottom: 2.5px dotted #828282;
+}
+
+
+#demo:hover {
+    color: #9c5854;
+}
+
+#demo:active {
+    color: #804b47;
+}
+
+#coded {
+    color: #607BBD;
+    border-bottom: 2.5px dotted #828282;
+}
+
+#coded:hover {
+    color: #485c8c;
+}
+
+#coded:active {
+    color: #38486e;
+}
+
+#codeanddemo {
+    font-family: Arial;
+    font-size: 18.5px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    font-weight: bold;
+    color: #4f4f4f;
+    margin-top: 1.5rem;
+}
+
+#jinyoung {
+    color: #5c805c;
+}
+
+#jinyoung:hover {
+    color: #496349;
+}
+
+/*end of signature snippet*/
+
+
+.modal {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    /*these were set to make sure modal overlay covers entire screen*/
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    /*end of attempt to get overlay to cover entire screen*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.65);
+}
+
+.modal--hidden {
+    display: none;
+}
+
+.modal_contents {
+        background-color: #dbdbdb;
+        padding: 1.75rem; /* 2 rem on top, bottom, left, and right */
+        border-radius: 0.75rem;
+        border: 2.75px solid #757575;
+        text-align: center;
+        z-index: 20;
+}
+
+.namefield {
+    width: 40%;
+    height: 50%;
+    font-size: 18px;
+    color: #757575;
+    outline-color: #757171;
+    border-radius: 0.2rem;
+    border: .05px solid #757171;
+    margin: 2px 10px 2px 10px;
+}
+
+.datefield {
+    width: 36%;
+    font-family: Arial;
+    font-size: 16px;
+    color: #757575;
+    outline-color: #757171;
+}
+
+#modaltitle {
+    font-size: 35.5px;
+    color: #4a4848;
+    font-weight: normal;
+    border-bottom: 2.75px solid #757575;;
+    width: 100%;
+}
+
+#notes-text {
+    font-size: 27.5px;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+#notes-input {
+    width: 40%;
+    font-family: Arial;
+    font-size: 16px;
+    color: #757575;
+    outline-color: #757171;
+    border-radius: 0.25rem;
+}
+
+#checkInText {
+    font-size: 22.5px;
+    margin-top: 1em;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#check-in-time {
+    width: 26.5%;
+    font-family: Arial;
+    font-size: 16px;
+    color: #757575;
+    outline-color: #757171;
+}
+
+#submit {
+    background-color: #6c966c;
+    color: white;
+    font-weight: normal;
+    border-radius: 0.25rem;
+    border: 2.75px solid #757575;
+    padding: .2rem;
+}
+
+#submit:hover {
+    background-color: #658c65;
+}
+
+#submit:active {
+    background-color: #5c805c;
+}
+
+.modal_closebar {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -1rem;
+    margin-top: -1rem;
+}
+
+#close {
+    padding: 0;
+    font-size: 18px;
+    height: 1.365em;
+    width: 1.25em;
+    border-radius: 0.25rem;
+    border: 2.75px solid #757575;
+    background-color: #949292;
+    color: white;
+}
+
+#close:hover {
+    background-color: #8a8a8a;
+}
+
+#close:active {
+    background-color: #757373;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 3rem;
+}
+
+/*these below are for styling the elements of newly submitted profile*/
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 392.5px;
+    background-color: #e6e7eb;
+    border-radius: 0.75rem;
+    border: solid #827f7f;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.15);
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.overdue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 392.5px;
+    background-color: #e6e7eb;
+    border-radius: 0.75rem;
+    border: solid #ad5e5a;
+    box-shadow:0 0 15px 4px rgba(173,94,90,0.15);
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+.name {
+    width: 100%;
+    margin-top: 17.5px;
+    font-size: 35px;
+    font-weight: normal;
+    text-align: center;
+    height: 15%;
+    border-bottom: solid #827f7f;
+}
+
+.nameOverDue {
+    width: 100%;
+    margin-top: 17.5px;
+    font-size: 35px;
+    font-weight: normal;
+    text-align: center;
+    height: 15%;
+    border-bottom: solid #ad5e5a;
+}
+
+.datetext {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.date { /*bold string*/
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.time {
+    color: #6e6969;
+    margin-top: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.notes { /*underlined mouseover string*/
+    color: #7d7979;
+    margin-top: 17.5px;
+    font-size: 20.5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    cursor: help;
+    position: relative;
+}
+
+.notes[aria-label]:after {
+  opacity:0;
+  content: attr(aria-label);
+  padding: 4px 8px;
+  position: absolute;
+  border-radius: 0.75rem;
+  border: solid #827f7f;
+  left: 0;
+  top: 100%;
+  white-space: nowrap;
+  z-index: 20;
+  background: #827f7f;
+  color: #e6e7eb;
+  transition: opacity 0.25s;
+  pointer-events:none;
+  font-size: 15px;
+  font-weight: normal;
+
+}
+
+span[aria-label]:hover:after {
+  opacity:1;
+  transition-delay:0.0005s;
+}
+
+.daysLeft { /*red string underlined and overlined*/
+    margin-top: 10px;
+    font-size: 22.5px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    color: #C26965;
+    text-decoration: underline;
+}
+
+.btnwrapper {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.checkedinbtn { /*green button with white 'checked in' text*/
+    border-radius: 0.75rem;
+    border: 2.75px solid #827f7f;
+    width: 85px;
+    height: 50px;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    margin-right: 8px;
+}
+
+.clearbtn {
+    border-radius: 0.75rem;
+    border: 2.75px solid #827f7f;
+    width: 80px;
+    height: 50px;
+    color: #fff;
+    background-color: #C26965;
+    font-size: 18px;
+    display: inline-block;
+    float: left;
+}
+
+.clearbtn:hover {
+    background-color: #b3615d;
+}
+
+.clearbtn:active {
+    background-color: #9c5652;
+}
+
+#gif {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    display: block;
+    border-radius: 1.5%;
+
+}
+
+#gif-container {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right : auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 750px;
+    height: 570px;
+    background-color: #999999;
+    border-radius: 1.75%;
+    border: 2.75px solid #4f4f4f;
+}
+
+#above-gif {
+    height: 30px;
+}
+
+#return {
+    font-family: Arial;
+    font-size: 18.5px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    font-weight: bold;
+    color: #4f4f4f;
+    margin-top: 1.5rem;
+}
+
+
+@media (max-width: 1200px) {
+    #card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        font-size: 2.75rem;
+    }
+
+    #sourcecode {
+    font-size: 15px;
+}
+
+
+    #card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
