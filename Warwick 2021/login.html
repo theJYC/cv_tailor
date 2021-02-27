@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+
+<script src="login.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+</head>
+<body>
+	<h1>Login</h1>
+	<div id="header"></div>
+<input type="Email" placeholder="Email" id="Email"/>
+<input type="password" placeholder="password" id="password"/>
+
+<button onclick="signup()" id="signup">Sign Up</button>
+<button onclick="signin()" id="signin">Sign In</button>
+<button onclick="signout()" id="signout">Sign Out</button>
+
+
+</body>
+</html>
