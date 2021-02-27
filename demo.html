@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>cvtailor</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css">
+    </link>
+
+    <!-- added for thumbnail display, 02/26/21 -->
+    <meta name="description" content="cvtailor" />
+    <meta name="title" property="og:title" content="cvtailor." />
+    <meta property="og:type" content="Website" />
+    <meta name="image" property="og:image" content="misc/thumbnail.png" />
+    <meta name="author" content="Jin Young Choi" />
+    <!-- end of thumbnail content -->
+</head>
+
+<body>
+
+    <!-- title -->
+    <header>cvtailor.</header>
+    <!-- open-source hackathon submission -->
+    <div id="sourcecode">
+        <p>
+            <a id="jinyoung" class="sourcetext" target="_blank" href="https://github.com/jinyoungch0i/cvtailor">open-source hackathon entry</a>
+        </p>
+    </div>
+    <!-- add contact button -->
+    <div id="contact">
+        <button class="addContact">tailor cv</button>
+    </div>
+
+    <!-- modal form window <hidden unless 'add contact' pressed> -->
+    <div class="modal modal--hidden">
+        <div class="modal_contents">
+            <div class="modal_closebar">
+                <button id="close">×</button>
+            </div>
+            <form id="form">
+                <p id="modaltitle">CV information</p>
+                <input id="first-name" required="required" class="namefield" type="text" placeholder="first name"
+                    autocomplete="off" />
+                <input id="last-name" required="required" class="namefield" type="text" placeholder="last initial"
+                    maxlength="1" autocomplete="off" />
+                <p id="notes-text">notes:</p>
+                <textarea id="notes-input" placeholder="" rows="4" style="width:287px; height:73px" required></textarea>
+                <p id="checkInText">check in by:</p>
+                <!-- date placeholder value indicated below is compatible with safari -->
+                <input name="checkinby" id="check-in-by" required="required" placeholder="YYYY-MM-DD" class="datefield"
+                    type="date" required />
+                <input name="checkintime" id="check-in-time" required="required" type="time" value="09:00" required />
+                <input type="submit" form="form" id="submit" value="submit" />
+            </form>
+        </div>
+    </div>
+
+    <!-- card-container to be populated when form is submitted and saved to localStorage -->
+    <div id="card-container">
+    </div>
+
+    <div id="codeanddemo">
+        <p>
+            <a id="demo" class="sourcetext" href="demo.html">demo</a>
+            &
+            <a id="coded" class="sourcetext" target="_blank"
+                href="https://github.com/jinyoungch0i/cvtailor">code</a>
+        </p>
+    </div>
+
+    placeholder for login
+    <script></script>
+
+    <!-- main .js script file is placed below day.js reference in order to run only once dayjs.min.js file is loaded first -->
+    <script src="app.js" type="text/javascript"></script>
+
+</body>
+
+</html>
