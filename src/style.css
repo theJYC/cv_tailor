@@ -163,6 +163,14 @@ p {
     margin: 2px 10px 2px 10px;
 }
 
+.diploma-type {
+    width: 12%;
+}
+
+.graduation-date {
+    width: 12.75%;
+}
+
 .datefield {
     width: 36%;
     font-family: Arial;
