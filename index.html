@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>cvtailor</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css">
+    </link>
+
+    <!-- added for thumbnail display, 02/26/21 -->
+    <meta name="description" content="cvtailor" />
+    <meta name="title" property="og:title" content="cvtailor." />
+    <meta property="og:type" content="Website" />
+    <meta name="image" property="og:image" content="misc/thumbnail.png" />
+    <meta name="author" content="Jin Young Choi" />
+    <!-- end of thumbnail content -->
+</head>
+
+<body>
+
+    <!-- title -->
+    <header>cvtailor.</header>
+    <!-- open-source hackathon submission -->
+    <div id="sourcecode">
+        <p>
+            <a id="jinyoung" class="sourcetext" target="_blank"
+                href="https://github.com/jinyoungch0i/cvtailor">open-source hackathon entry</a>
+        </p>
+    </div>
+    <!-- add contact button -->
+    <div id="contact">
+        <button class="newProfile">new profile</button>
+    </div>
+
+    <!-- modal form window <hidden unless 'add contact' pressed> -->
+    <div class="modal modal--hidden">
+        <div class="modal_contents">
+            <div class="modal_closebar">
+                <button id="close">×</button>
+            </div>
+            <form id="form">
+                <p id="modaltitle">New Profile</p>
+
+                <!-- basic info. section -->
+                <p id="notes-text">basic info.</p>
+                <input required="required" class="namefield" type="text" placeholder="first name"
+                    autocomplete="off" />
+                <input id="last-name" required="required" class="namefield" type="text" placeholder="last name"
+                    autocomplete="off" />
+                <input required="required" class="namefield" type="email" placeholder="email" autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="phone nō" autocomplete="off" />
+                <input required="required" class="namefield" type="url" placeholder="linkedin url" autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="address" autocomplete="off" />
+
+                <!-- extra-curriculars section -->
+                <p id="notes-text">extra curriculars</p>
+
+                <input required="required" class="namefield" type="text" placeholder="organisation"
+                    autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="description" autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="skills" autocomplete="off" />
+
+                <!-- education section -->
+                <p id="notes-text">education</p>
+
+                <input required="required" class="namefield" type="text" placeholder="institution"
+                    autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="field of study" autocomplete="off" />
+                <input required="required" class="namefield diploma-type datefield" type="text" placeholder="diploma type" autocomplete="off" />
+                <p3>expected graduation date:</p><input required="required" class="namefield graduation-date" type="date" autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="grade"
+                    autocomplete="off" />
+
+                <!-- work experience section -->
+                <p id="notes-text">work experience</p>
+
+                <input required="required" class="namefield" type="text" placeholder="organisation"
+                    autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="position" autocomplete="off" />
+                <input required="required" class="namefield datefield" type="date" placeholder="description" autocomplete="off" />
+                <input required="required" class="namefield datefield" type="date" placeholder="skills" autocomplete="off" />
+
+                <!-- projects section -->
+                <p id="notes-text">projects</p>
+                <input required="required" class="namefield" type="text" placeholder="project name"
+                autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="description"
+                autocomplete="off" />
+                <input required="required" class="namefield" type="text" placeholder="technologies"
+                autocomplete="off" />
+
+                <!-- submit button  -->
+                <input type="submit" form="form" id="submit" value="submit" />
+            </form>
+        </div>
+    </div>
+
+    <!-- card-container to be populated when form is submitted-->
+    <!-- n.b currently in flex & indiv. card display. needs to be modified for resume format -->
+    <div id="card-container">
+    </div>
+
+    <div id="codeanddemo">
+        <p>
+            <a id="demo" class="sourcetext" href="demo.html">demo</a>
+            &
+            <a id="coded" class="sourcetext" target="_blank" href="https://github.com/jinyoungch0i/cvtailor">code</a>
+        </p>
+    </div>
+
+    <!-- placeholder for login html synchronisation
+    <script></script>
+     -->
+    <script src="script.js" type="text/javascript"></script>
+
+</body>
+
+</html>
