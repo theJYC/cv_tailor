@@ -142,12 +142,11 @@ if input('have you filled in the cv building form before?(y/n) ').lower() == 'y'
 
     our_dict = firebase_get(db, form_data)
     profession = input('''
-                       which profession do you want a CV for, choose from -
-                       Software Engineer
-                       Lawyer
-                       Medical
-                       Academic Researcher
-                       Accounting and Finanance
-                       enter one here:
-                       ''').lower()
+    which profession do you want a CV for, choose from -
+    Software Engineer
+    Lawyer
+    Medical
+    Academic Researcher
+    Accounting and Finance
+    enter one here: ''').lower()
     new_dict = proper_data(db, our_dict, profession)
