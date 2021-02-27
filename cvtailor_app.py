@@ -8,15 +8,6 @@ from firebase_admin import credentials, firestore
 
 import string
 
-import firebase_admin
-from firebase_admin import credentials
-cred = credentials.Certificate("cv-tailor-2021-firebase-adminsdk-fksao-29fb361d14.json")
-firebase_admin.initialize_app(cred)
-
-db = firestore.client()
-
-#def get_form_data():
-
 
 
 def firestore_upload(db, form_data):
@@ -79,11 +70,20 @@ def firebase_get(db, form_data):
 
 
 
-def proper_data(db, data, profession):
+def proper_data(db, data):
     '''
     input  file
     return python dictionary consisting of json file
     '''
+    data = firebase_get(db, form_data)
+    profession = input('''
+    which profession do you want a CV for, choose from -
+    Software Engineer
+    Lawyer
+    Medical
+    Academic Researcher
+    Accounting and Finance
+    enter one here: ''').lower()
 
     get_skills = db.collection('Careers').where('name','==',profession).stream()
 
@@ -94,9 +94,10 @@ def proper_data(db, data, profession):
             my_list.append(pro_skills.to_dict()['name'])
 
     new_data = {}
-    new_data['name'] = data.get('name')
-    new_data['email'] = data.get('email')
-    new_data['phone_no'] = data.get('phone_no')
+    new_data['name'] = data['name']
+    new_data['email'] = data['email']
+    new_data['phone_no'] = data['phone_no']
+    new_data['linkedin_profile'] = data['linkedin_profile']
     new_data['extra_curriculars'] = list()
     new_data['experience'] = list()
     new_data['projects'] = list()
@@ -128,25 +129,186 @@ def proper_data(db, data, profession):
 
     return new_data
 
-if __name__ == '__main__':
-    print('hi, this is a revolutionary cv building idea which can disrupt existing apps if given sufficient time to develop')
+def get_form_data():
+    print('now you need to fill a form just ones and you can generate a CV for any role you like later!')
 
-if input('have you filled in the cv building form before?(y/n) ').lower() == 'y':
-    email = input('enter your email: ')
-    get_data = db.collection('persons').where('email','==',email.lower().split())
+    form_data = {}
 
-    if len(get_data.get()) == 0:
-        form_data = {'email': email}
-    else:
-        print('the email you entered is not known')
+    form_data['name'] = input('Your name as you want to see it on the resume: ')
+    form_data['email'] = input('Your email for the resume: ')
+    form_data['linkedin_profile'] = input('Enter the link of your LinkedIn profile: ')
+    form_data['phone_no'] = input('Enter your phone number: ')
+    form_data['address'] = input ('Enter your address in one line: ')
+    from_data['education'] = list()
+    form_data['experience'] = list()
+    form_data['extra_curriculars'] = list()
+    form_data['projects'] = list()
 
-    our_dict = firebase_get(db, form_data)
-    profession = input('''
-    which profession do you want a CV for, choose from -
-    Software Engineer
-    Lawyer
-    Medical
-    Academic Researcher
-    Accounting and Finance
-    enter one here: ''').lower()
-    new_dict = proper_data(db, our_dict, profession)
+    while true:
+        education = {}
+        if input('do you want to add more education(y/n): ').lower == y:
+            education['organization'] = input('name of organization: ')
+            education['name_of_course'] = input('name of your course: ')
+            education['qualification'] = input('the qualification you have or will recieve: ')
+            education['date_completed'] = input('date completed or will complete: ')
+            education['grade'] = input('grade recieved: ')
+            education['skills'] = input('''
+enter the skills you gained. Only choose and copy exactly from the list below:
+1.	Creativity.
+2.	Commercial awareness
+3.	Interpersonal Skills.
+4.	Critical Thinking.
+5.	Problem Solving.
+6.	Public Speaking.
+7.	Customer Service Skills.
+8.	Teamwork Skills.
+9.	Communication.
+10.	Collaboration.
+11.	Accounting.
+12.	Active Listening.
+13.	Adaptability.
+14.	Negotiation.
+15.	Conflict Resolution.
+16.	Decision-making.
+17.	Empathy.
+18.	Information analysis and research
+19.	Decision Making.
+20.	Management.
+21.	Leadership skills.
+22.	Organization.
+23.	Language skills.
+24.	Administrative skills
+25.	Computer programming
+
+Do not enter numbers, dots, or symbols and make sure you seperate each with a comma!
+enter here:
+                                        ''').lower().split(',')
+            form_data['education'].append(education)
+        else:
+            break
+
+    while true:
+        experiance = {}
+        if input('do you want to add more experiance(y/n): ').lower == y:
+            experiance['organization'] = input('name of organization: ')
+            experiance['name_of_role'] = input('name of your role: ')
+            experiance['date_start'] = input('date you started working here: ')
+            experiance['date_finish'] = input('date you stopped working here: ')
+            experiance['description'] = input('Describe your experiance breifly: ')
+            experiance['skills'] = input('''
+enter the skills you gained. Only choose and copy exactly from the list below:
+1.	Creativity.
+2.	Commercial awareness
+3.	Interpersonal Skills.
+4.	Critical Thinking.
+5.	Problem Solving.
+6.	Public Speaking.
+7.	Customer Service Skills.
+8.	Teamwork Skills.
+9.	Communication.
+10.	Collaboration.
+11.	Accounting.
+12.	Active Listening.
+13.	Adaptability.
+14.	Negotiation.
+15.	Conflict Resolution.
+16.	Decision-making.
+17.	Empathy.
+18.	Information analysis and research
+19.	Decision Making.
+20.	Management.
+21.	Leadership skills.
+22.	Organization.
+23.	Language skills.
+24.	Administrative skills
+25.	Computer programming
+
+Do not enter numbers, dots, or symbols and make sure you seperate each with a comma!
+enter here:
+                                        ''').lower().split(',')
+            form_data['experience'].append(experience)
+        else:
+            break
+
+    while true:
+        extra_curriculars = {}
+        if input('do you want to add more extra curriculars(y/n): ').lower == y:
+            extra_curriculars['organization'] = input('name of organization: ')
+            extra_curriculars['name'] = input('name of your activity: ')
+            extra_curriculars['description'] = input('Describe your extra curricular breifly: ')
+            extra_curriculars['skills'] = input('''
+enter the skills you gained. Only choose and copy exactly from the list below:
+1.	Creativity.
+2.	Commercial awareness
+3.	Interpersonal Skills.
+4.	Critical Thinking.
+5.	Problem Solving.
+6.	Public Speaking.
+7.	Customer Service Skills.
+8.	Teamwork Skills.
+9.	Communication.
+10.	Collaboration.
+11.	Accounting.
+12.	Active Listening.
+13.	Adaptability.
+14.	Negotiation.
+15.	Conflict Resolution.
+16.	Decision-making.
+17.	Empathy.
+18.	Information analysis and research
+19.	Decision Making.
+20.	Management.
+21.	Leadership skills.
+22.	Organization.
+23.	Language skills.
+24.	Administrative skills
+25.	Computer programming
+
+Do not enter numbers, dots, or symbols and make sure you seperate each with a comma!
+enter here:
+                                        ''').lower().split(',')
+            form_data['extra_curriculars'].append(extra_curriculars)
+        else:
+            break
+
+
+    while true:
+        project = {}
+        if input('do you want to add more extra curriculars(y/n): ').lower == y:
+            project['name_of_project'] = input('name of your project: ')
+            project['description'] = input('Describe your project breifly: ')
+            project['skills'] = input('''
+enter the skills you gained. Only choose and copy exactly from the list below:
+1.	Creativity.
+2.	Commercial awareness
+3.	Interpersonal Skills.
+4.	Critical Thinking.
+5.	Problem Solving.
+6.	Public Speaking.
+7.	Customer Service Skills.
+8.	Teamwork Skills.
+9.	Communication.
+10.	Collaboration.
+11.	Accounting.
+12.	Active Listening.
+13.	Adaptability.
+14.	Negotiation.
+15.	Conflict Resolution.
+16.	Decision-making.
+17.	Empathy.
+18.	Information analysis and research
+19.	Decision Making.
+20.	Management.
+21.	Leadership skills.
+22.	Organization.
+23.	Language skills.
+24.	Administrative skills
+25.	Computer programming
+
+Do not enter numbers, dots, or symbols and make sure you seperate each with a comma!
+enter here:
+                                        ''').lower().split(',')
+            form_data['projects'].append(project)
+        else:
+            break
+    return form_data
