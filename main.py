@@ -40,6 +40,6 @@ while True:
     print('your normal CV is: ')
     cv_tailor(form_data)
 
-    if input('do you want to re-run the application?(yes/no): ').lower() == yes:
+    if input('do you want to re-run the application?(yes/no): ').lower() == 'yes':
         continue
     break
