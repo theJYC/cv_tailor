@@ -21,6 +21,16 @@ python main.py
 
 For troubleshooting, please ensure that you have the latest version of Python.
 
+## Firebase Database
+
+We are confident that the complexity of our Firebase database is what makes our program great. <br>
+Please check it out [here](https://console.firebase.google.com/u/3/project/cv-tailor-2021/firestore/data~2Fpersons~2F8oxJHSS7pAXvIwenxC9T) using our login:
+
+```
+email: warwickhackathon2021@gmail.com
+password: warwickhacks2021#
+```
+
 ## Inspiration
 
 Almost everyone goes through a tedious, but necessary, process when applying for a job. 
