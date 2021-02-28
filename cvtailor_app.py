@@ -139,14 +139,14 @@ def get_form_data():
     form_data['linkedin_profile'] = input('Enter the link of your LinkedIn profile: ')
     form_data['phone_no'] = input('Enter your phone number: ')
     form_data['address'] = input ('Enter your address in one line: ')
-    from_data['education'] = list()
+    form_data['education'] = list()
     form_data['experience'] = list()
     form_data['extra_curriculars'] = list()
     form_data['projects'] = list()
 
-    while true:
+    while True:
         education = {}
-        if input('do you want to add more education(y/n): ').lower == y:
+        if input('do you want to add more education(y/n): ').lower() == 'y':
             education['organization'] = input('name of organization: ')
             education['name_of_course'] = input('name of your course: ')
             education['qualification'] = input('the qualification you have or will recieve: ')
@@ -187,15 +187,15 @@ enter here:
         else:
             break
 
-    while true:
-        experiance = {}
-        if input('do you want to add more experiance(y/n): ').lower == y:
-            experiance['organization'] = input('name of organization: ')
-            experiance['name_of_role'] = input('name of your role: ')
-            experiance['date_start'] = input('date you started working here: ')
-            experiance['date_finish'] = input('date you stopped working here: ')
-            experiance['description'] = input('Describe your experiance breifly: ')
-            experiance['skills'] = input('''
+    while True:
+        experience = {}
+        if input('do you want to add more experiance(y/n): ').lower() == 'y':
+            experience['organization'] = input('name of organization: ')
+            experience['name_of_role'] = input('name of your role: ')
+            experience['date_start'] = input('date you started working here: ')
+            experience['date_finish'] = input('date you stopped working here: ')
+            experience['description'] = input('Describe your experiance breifly: ')
+            experience['skills'] = input('''
 enter the skills you gained. Only choose and copy exactly from the list below:
 1.	Creativity.
 2.	Commercial awareness
@@ -230,9 +230,9 @@ enter here:
         else:
             break
 
-    while true:
+    while True:
         extra_curriculars = {}
-        if input('do you want to add more extra curriculars(y/n): ').lower == y:
+        if input('do you want to add more extra curriculars(y/n): ').lower() == 'y':
             extra_curriculars['organization'] = input('name of organization: ')
             extra_curriculars['name'] = input('name of your activity: ')
             extra_curriculars['description'] = input('Describe your extra curricular breifly: ')
@@ -272,9 +272,9 @@ enter here:
             break
 
 
-    while true:
+    while True:
         project = {}
-        if input('do you want to add more extra curriculars(y/n): ').lower == y:
+        if input('do you want to add more projects(y/n): ').lower() == 'y':
             project['name_of_project'] = input('name of your project: ')
             project['description'] = input('Describe your project breifly: ')
             project['skills'] = input('''

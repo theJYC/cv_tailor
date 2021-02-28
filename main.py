@@ -1,10 +1,5 @@
 from cvtailor_app import firestore_upload, firebase_get, proper_data, get_form_data
 
-import numpy as np
-from random import seed
-from random import randint
-
-import pandas as pd
 import firebase_admin
 from firebase_admin import credentials, firestore
 
@@ -17,11 +12,17 @@ db = firestore.client()
 
 print('hi, this is a revolutionary cv building idea which can disrupt existing apps if given sufficient time to develop')
 
-if input('have you filled in the cv building form before?(y/n) ').lower() == 'y':
-    email = input('enter your email: ')
-    get_data = db.collection('persons').where('email','==',email.lower().split())
+while True:
+    if input('have you filled in the cv building form before?(y/n) ').lower() == 'y':
+        email = input('enter your email: ')
+        get_data = db.collection('persons').where('email','==',email.lower().split())
 
-    if len(get_data.get()) == 0:
-        form_data = {'email': email}
+        if len(get_data.get()) == 0:
+            form_data = {'email': email}
+            break
+        else:
+            print('the email you entered is not known, please enter n next')
+
     else:
-        print('the email you entered is not known')
+        form_data = get_form_data()
+        break
