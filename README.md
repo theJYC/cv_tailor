@@ -17,5 +17,9 @@ Installation:
 commandline:
 sudo pip install firebase-admin
 pip install pandas
+pip install numpy
 
 If this does not work, install pip and check that you have the latest version of python.
+
+Running:
+execute the 'main.py' app 
