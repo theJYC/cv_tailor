@@ -6,6 +6,8 @@ import pandas as pd
 import firebase_admin
 from firebase_admin import credentials, firestore
 
+from cv_create import linebreak
+
 import string
 
 
@@ -75,7 +77,6 @@ def proper_data(db, data):
     input  file
     return python dictionary consisting of json file
     '''
-    data = firebase_get(db, form_data)
     profession = input('''
     which profession do you want a CV for, choose from -
     Software Engineer
@@ -97,7 +98,8 @@ def proper_data(db, data):
     new_data['name'] = data['name']
     new_data['email'] = data['email']
     new_data['phone_no'] = data['phone_no']
-    new_data['linkedin_profile'] = data['linkedin_profile']
+    new_data['linkedin profile'] = data['linkedin profile']
+    new_data['address'] = data['address']
     new_data['extra_curriculars'] = list()
     new_data['experience'] = list()
     new_data['projects'] = list()
@@ -143,6 +145,7 @@ def get_form_data():
     form_data['experience'] = list()
     form_data['extra_curriculars'] = list()
     form_data['projects'] = list()
+    linebreak()
 
     while True:
         education = {}
@@ -184,6 +187,7 @@ Do not enter numbers, dots, or symbols and make sure you seperate each with a co
 enter here:
                                         ''').lower().split(',')
             form_data['education'].append(education)
+            linebreak()
         else:
             break
 
@@ -227,6 +231,7 @@ Do not enter numbers, dots, or symbols and make sure you seperate each with a co
 enter here:
                                         ''').lower().split(',')
             form_data['experience'].append(experience)
+            linebreak()
         else:
             break
 
@@ -268,6 +273,7 @@ Do not enter numbers, dots, or symbols and make sure you seperate each with a co
 enter here:
                                         ''').lower().split(',')
             form_data['extra_curriculars'].append(extra_curriculars)
+            linebreak()
         else:
             break
 
@@ -309,6 +315,7 @@ Do not enter numbers, dots, or symbols and make sure you seperate each with a co
 enter here:
                                         ''').lower().split(',')
             form_data['projects'].append(project)
+            linebreak()
         else:
             break
     return form_data
