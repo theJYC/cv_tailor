@@ -1,9 +1,8 @@
 ## Members
-
-Aaryan Gulia - Beginner; @Aaryan G#7734<br>
-Jin Young Choi - Beginner; @jinyoung#8918<br>
-Obinna - Beginner; @Obinna#1175<br>
-Pulkit Singh - Beginner; @hydra#6976
+Aaryan Gulia<br>
+Jin Young Choi<br>
+Obinna Mezu<br>
+Pulkit Singh
 
 ## Installation
 
