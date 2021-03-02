@@ -4,6 +4,8 @@
 
 cv_tailor is an open source CLI tool that renders a highly tailoured CV/resume for specific job applications.
 
+*This is a submission for a 24-hour virtual hackathon that took place between 2/27/21 - 2/28/21*
+
 ## Inspiration
 
 Almost every successful job applicant goes through the tedious, but necessary, process of rewriting their CV/resume when applying for more than one specific position. 
