@@ -13,9 +13,7 @@ if __name__ == '__main__':
 db = firestore.client()
 
 while True:
-    print('Hi there! cv_tailor is an open source CLI tool that renders a highly tailoured CV/resume for a more targeted job application.
-
-')
+    print('Hi there! cv_tailor is an open source CLI tool that renders a highly tailored CV/resume for a more targeted job application.')
 
     while True:
         if input('Have you filled out the cv_tailor form before (y/n)?: ').lower() == 'y':
