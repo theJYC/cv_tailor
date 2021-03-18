@@ -136,7 +136,7 @@ def proper_data(db, data):
 
 
 def get_form_data():
-    print('Great! Fill out the following form just once, and cv_tailor will generate a custom cv/résumé for specific roles you wish to apply for later.')
+    print('Great! Fill out the following form to your best ability, and cv_tailor will generate a custom cv/résumé for any specific role you wish to apply for.')
 
     form_data = {}
 
