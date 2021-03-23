@@ -2,7 +2,7 @@
 
 **Technologies: Python (NumPy, pandas), Google Firebase** 
 
-cv_tailor is an open source CLI tool that renders a highly tailoured CV/resume for specific job applications.
+`cv_tailor` is a CLI tool that automates the CV/résumé tailoring process for job applicants submitting individual applications for specialised roles.
 
 *This is a submission for a 24-hour virtual hackathon that took place between 2/27/21 - 2/28/21*
 
