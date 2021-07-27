@@ -137,7 +137,6 @@ def proper_data(db, data):
 
 def get_form_data():
     print('Great! Fill out the following form to your best ability, and cv_tailor will generate a custom cv/résumé for any specific role you wish to apply for.')
-
     form_data = {}
 
     form_data['name'] = input(
@@ -292,7 +291,8 @@ Enter here:
         project = {}
         if input('Would you like to add Project Experience (y/n)?: ').lower() == 'y':
             project['name_of_project'] = input('Project Name: ')
-            project['description'] = input('One or two line description of your Project: ')
+            project['description'] = input(
+                'One or two line description of your Project: ')
             project['skills'] = input('''
 Enter the skills you gained. Only choose and copy exactly from the list below:
 1.  Creativity.
